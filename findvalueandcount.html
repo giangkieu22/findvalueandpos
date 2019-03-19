@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timphantu</title>
+</head>
+<body>
+<!--<p>Nhập giá trị và tìm: </p>-->
+<!--<input type="number" id="value">-->
+<!--<button onclick="findandcount()"> Tìm </button>-->
+<!--<br>-->
+<!--<br>-->
+<div id="result"></div>
+<br>
+<br>
+<script>
+    // let x = document.getElementById('value');
+    let array = [];
+    let count = [];
+    let x = parseInt(prompt());
+    for (let i = 0; i < 100; i++) {
+        array[i] = Math.floor(Math.random() * 101);
+    }
+
+    function draw() {
+        let i;
+        for (i = 0; i < array.length; i++) {
+            document.write(array[i] + ' ');
+            if (i % 10 == 9) {
+                document.write('</br>');
+            }
+        }
+    }
+
+    function findandcount() {
+        for (let i = 0; i < array.length; i++) {
+            if (x == array[i]) {
+                document.getElementById('result').innerHTML
+                    = 'Tìm thấy giá trị ' + x + ' ở vị trí ' + (i+1) + ' trong mảng';
+                count.push(i);
+            }
+        }
+        if (count.length == 0) {
+            document.getElementById('result').innerHTML
+                = 'Không có giá trị ' + x + ' trong mảng!';
+        }
+    }
+
+    findandcount();
+    draw();
+</script>
+</body>
+</html>
